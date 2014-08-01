@@ -2,13 +2,49 @@
 <html>
 <head>
   <title>Treebook</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+ 
 </head>
-<body>
+<body >
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar navbar-inverse">
+  			<div class="navbar-inner">
+   				 <div class="container">
+ 				      <a class="brand" href="#">TREE BOOK</a>		
+          					 
+                     <ul class="nav">
+     					      <li><%= link_to "All Statuses", statuses_path %></li>
 
-<%= yield %>
+     					 <form class="navbar-form pull-right">
+  								<input type="text" class="span2">
+  								<button type="submit" class="btn">Submit</button>
+						</form>
 
+						<form class="navbar-search pull-left">
+  								<input type="text" class="search-query" placeholder="Search">
+						</form>
+
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      Account
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      New user
+      New request
+    
+  </li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+	<div class="container">
+		<%= yield %>
+		</div>
 </body>
 </html>
